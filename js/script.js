@@ -20,7 +20,7 @@ function showPage(list, page) {
 
 	for (let i = 0; i < list.length; i++) {
 		if (i >= startIndex && i < endIndex) {
-         let html = `
+			let html = `
          
          <li class="student-item cf">
             <div class="student-details">
@@ -36,26 +36,44 @@ function showPage(list, page) {
       <span class="date">Joined : ${list[i].registered.date}</span>
     </div>
   </li>`;
-			studentList.insertAdjacentHTML("beforeend", html);
+      studentList.insertAdjacentHTML("beforeend", html);
 		}
 	}
 }
 
 /** This function creates and appends functioning pagination buttons.
-*@param {array} list Student data that will be passed as an argument when the function is called.
-*/
+ *@param {array} list Student data that will be passed as an argument when the function is called.
+ */
 
 function pagination(list) {
-  //Calculate how many pagination numbers are needed
-  const numPaginationBtns = Math.round(list.length / 9);
-  const linkList = document.querySelector(".link-list");
+
+	//Calculate how many pagination numbers are needed
+
+	const numPaginationBtns = Math.round(list.length / 9);
+	const linkList = document.querySelector(".link-list");
+
   //Remove any previously displayed buttons
-  linkList.innerHTML = '';
-  
-  console.log(linkList);
-};
 
+  linkList.innerHTML = "";
+	
+  //Loop through pages needed and create html template
 
-// Call functions
+	for (let i = 0; i < numPaginationBtns; i++) {
+		let html = `
+      <li>
+        <button type="button">${i}</button>
+      </li>
+    `;
+
+  //Render elements in DOM with first button set as Active
+    linkList.insertAdjacentHTML("beforeend", html);
+    linkList.firstElementChild.classList = "active";
+  //Add event listener to pagination buttons
+	}
+	
+}
+
+// Call functions with required arguements
+
 showPage(data, 1);
 pagination(data);
