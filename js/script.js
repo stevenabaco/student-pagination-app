@@ -67,8 +67,17 @@ function pagination(list) {
 
   //Render elements in DOM with first button set as Active
     linkList.insertAdjacentHTML("beforeend", html);
-    linkList.firstElementChild.classList = "active";
+    linkList.firstElementChild.firstElementChild.classList = "active";
   //Add event listener to pagination buttons
+    
+    linkList.addEventListener('click', (e) => {
+      const buttons = document. querySelectorAll('button[type=button]')
+      // Remove active class for any buttons
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList = ''
+      }
+   
+    })
 	}
 	
 }
