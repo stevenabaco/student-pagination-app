@@ -41,10 +41,21 @@ function showPage(list, page) {
 	}
 }
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
+/** This function creates and appends functioning pagination buttons.
+*@param {array} list Student data that will be passed as an argument when the function is called.
 */
+
+function pagination(list) {
+  //Calculate how many pagination numbers are needed
+  const numPaginationBtns = Math.round(list.length / 9);
+  const linkList = document.querySelector(".link-list");
+  //Remove any previously displayed buttons
+  linkList.innerHTML = '';
+  
+  console.log(linkList);
+};
+
 
 // Call functions
 showPage(data, 1);
+pagination(data);
