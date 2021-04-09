@@ -71,13 +71,14 @@ function pagination(list) {
   //Add event listener to pagination buttons
     
     linkList.addEventListener('click', (e) => {
-      const buttons = document. querySelectorAll('button[type=button]')
-      // Remove active class for any buttons
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList = ''
-      }
-   
-    })
+			const buttons = document.querySelectorAll("button[type=button]");
+			// Remove active class for any buttons
+			for (let i = 0; i < buttons.length; i++) {
+				buttons[i].classList = "";
+			}
+			// Set active class on clicked button
+			e.target.classList = "active";
+		})
 	}
 	
 }
