@@ -85,7 +85,7 @@ function showPage(list, page) {
 	}
 	// If search has no results display an message to let user know
 	if (list.length === 0) {
-		studentList.innerHTML = "There are no students matching your search";
+		studentList.innerHTML = '<li>There are no students matching your search</li>';
 		studentList.style.textAlign = "center";
 		studentList.style.color = "darkred";
 		studentList.style.fontSize = "1.5rem";
