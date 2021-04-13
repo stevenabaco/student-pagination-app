@@ -34,11 +34,10 @@ function attachSearch() {
 			let newData = [];
 
 			for (let i = 0; i < data.length; i++) {
-				let title = data[i].name.title.toLowerCase();
 				let firstName = data[i].name.first.toLowerCase();
 				let lastName = data[i].name.last.toLowerCase();
 				let userInput = input.value.toLowerCase();
-				let fullName = `${title} ${firstName} ${lastName}`;
+				let fullName = `${firstName} ${lastName}`;
 				if (fullName.includes(userInput)) {
 					newData.push(data[i]);
 				}
@@ -99,7 +98,7 @@ function showPage(list, page) {
 function pagination(list) {
 	//Calculate how many pagination numbers are needed
 
-	const numPaginationBtns = Math.round(list.length / 9);
+	const numPaginationBtns = Math.ceil(list.length / 9);
 	const linkList = document.querySelector(".link-list");
 
 	//Remove any previously displayed buttons
