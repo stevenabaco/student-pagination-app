@@ -14,4 +14,4 @@ There is also a feature to search the student database to filter out any student
 
 * HTML
 * CSS
-* Javascript.
+* Javascript
